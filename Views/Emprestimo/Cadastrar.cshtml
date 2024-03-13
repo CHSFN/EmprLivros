@@ -1,3 +1,4 @@
+@model EmprLivros.Models.EmprestimosModel
 @{
     ViewData["title"] = "Cadastrar Empréstimo";   
 }
@@ -8,20 +9,20 @@
         <h1>Cadastro de Empréstimos</h1>
     </div>
 
-    <form>
+    <form method="post" asp-controller="Emprestimo" asp-action="Cadastrar">
   <div class="mb-3">
     <label for="Recebedor" class="form-label">Recebedor</label>
-    <input type="text" class="form-control" id="Recebedor" placeholder="Quem está recebendo o livro?">
+    <input type="text" class="form-control" asp-for="Recebedor" id="Recebedor" placeholder="Quem está recebendo o livro?">
   </div>
 
   <div class="mb-3">
     <label for="Fornecedor" class="form-label">Fornecedor</label>
-    <input type="text" class="form-control" id="Fornecedor" placeholder="Quem está emprestando o livro?">
+    <input type="text" class="form-control" asp-for="Fornecedor" id="Fornecedor" placeholder="Quem está emprestando o livro?">
   </div>
   
   <div class="mb-3">
     <label for="Livro" class="form-label">Livro</label>
-    <input type="text" class="form-control" id="Livro" placeholder="Qual o livro empréstado?">
+    <input type="text" class="form-control" asp-for="LivroEmprestado" id="Livro" placeholder="Qual o livro empréstado?">
   </div>
 
   <div class="d-flex gap-5 mt-5">

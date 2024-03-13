@@ -26,5 +26,17 @@ namespace EmprLivros.Controllers
         {  
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Cadastrar(EmprestimosModel emprestimo)
+        {
+            if(ModelState.IsValid){
+                _db.Emprestimos.Add(emprestimo);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(emprestimo);
+        }
+
     }
 }
