@@ -14,6 +14,7 @@ namespace EmprLivros.Controllers
             _db = db;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {  
 
