@@ -71,6 +71,7 @@ namespace EmprLivros.Controllers
             if(ModelState.IsValid){
                 _db.Emprestimos.Add(emprestimo);
                 _db.SaveChanges();
+                TempData["success"] = "Emprestimo cadastrado com sucesso!";
                 return RedirectToAction("Index");
             }
             return View(emprestimo);
@@ -82,6 +83,7 @@ namespace EmprLivros.Controllers
             if(ModelState.IsValid){
                 _db.Emprestimos.Update(emprestimo);
                 _db.SaveChanges();
+                TempData["success"] = "Emprestimo editado com sucesso!";
                 return RedirectToAction("Index");
             }
             return View(emprestimo);
@@ -97,6 +99,7 @@ namespace EmprLivros.Controllers
             
             _db.Emprestimos.Remove(emprestimo);
             _db.SaveChanges();
+            TempData["success"] = "Emprestimo excluido com sucesso!";
             return RedirectToAction("Index");
         }
 
